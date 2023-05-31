@@ -1,1 +1,2 @@
 # ICS2O-CloseQuasarCombat
+[![GitHub's Super Linter](https://github.com/ICS2O-Programming-TheoR/ICS2O-CloseQuasarCombat/workflows/GitHub's%20Super%20Linter/badge.svg)](https://github.com/ICS2O-Programming-TheoR/ICS2O-CloseQuasarCombat/actions)
