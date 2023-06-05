@@ -9,12 +9,12 @@
 //This is the Title Scene
 
 /** 
-* This class is the Title Scene
-*/
+ * This class is the Title Scene
+ */
 class TitleScene extends Phaser.Scene {
   /** 
-  * This method is the constructor.
-  */
+   * This method is the constructor.
+   */
   constructor() {
     super({ key: "titleScene" })
 
@@ -28,29 +28,29 @@ class TitleScene extends Phaser.Scene {
   }
 
   /** 
-  * Can be defined on your own Scenes.
-  * This method is called by the Scene Manager when the scene starts,
-  *   before preload() and create().
-  * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
-  */
+   * Can be defined on your own Scenes.
+   * This method is called by the Scene Manager when the scene starts,
+   *   before preload() and create().
+   * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
+   */
   init(data) {
     this.cameras.main.setBackgroundColor("#21618C")
   }
 
   /** 
-  * Can be defined on your own Scenes.
-  * Use it to load assets.
-  */
+   * Can be defined on your own Scenes.
+   * Use it to load assets.
+   */
   preload(){
     console.log("Title Scene")
     this.load.image("titleSceneBackground", "assets/aliens_screen_image.jpg")
   }
 
   /** 
-  * Can be defined on your own Scenes
-  * Use it to create your game objects.
-  * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
-  */
+   * Can be defined on your own Scenes
+   * Use it to create your game objects.
+   * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
+   */
   create(data) {
     this.titleSceneBackgroundImage = this.add
       .sprite(0, 0, "titleSceneBackground")
@@ -64,11 +64,11 @@ class TitleScene extends Phaser.Scene {
   }
 
   /** 
-  * Should be overridden by your own Scenes.
-  * This method is called once per game step while the scene is running.
-  * @param {number} time - The current time.
-  * @param {number} delta - The delta time in ms since the last frame.
-  */
+   * Should be overridden by your own Scenes.
+   * This method is called once per game step while the scene is running.
+   * @param {number} time - The current time.
+   * @param {number} delta - The delta time in ms since the last frame.
+   */
   update(time, delta) {
     //pass
   }
