@@ -15,7 +15,7 @@ class TitleScene extends Phaser.Scene {
   /** 
    * This method is the constructor.
    */
-  constructor() {
+  constructor () {
     super({ key: "titleScene" })
 
     this.titleSceneBackgroundImage = null
@@ -33,7 +33,7 @@ class TitleScene extends Phaser.Scene {
    *   before preload() and create().
    * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
    */
-  init(data) {
+  init (data) {
     this.cameras.main.setBackgroundColor("#21618C")
   }
 
@@ -41,7 +41,7 @@ class TitleScene extends Phaser.Scene {
    * Can be defined on your own Scenes.
    * Use it to load assets.
    */
-  preload(){
+  preload () {
     console.log("Title Scene")
     this.load.image("titleSceneBackground", "assets/aliens_screen_image.jpg")
   }
@@ -51,7 +51,7 @@ class TitleScene extends Phaser.Scene {
    * Use it to create your game objects.
    * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
    */
-  create(data) {
+  create (data) {
     this.titleSceneBackgroundImage = this.add
       .sprite(0, 0, "titleSceneBackground")
       .setScale(2.75)
@@ -59,7 +59,7 @@ class TitleScene extends Phaser.Scene {
     this.titleSceneBackgroundImage.y = 1080 / 2
 
     this.titleSceneText = this.add
-    .text(1920 / 2, 1080 / 2 + 350, "Close Quasar Combat", this.titleSceneTextStyle)
+    .text(1920 / 2, (1080 / 2) + 350, "Close Quasar Combat", this.titleSceneTextStyle)
     .setOrigin(0.5)
   }
 
@@ -69,8 +69,10 @@ class TitleScene extends Phaser.Scene {
    * @param {number} time - The current time.
    * @param {number} delta - The delta time in ms since the last frame.
    */
-  update(time, delta) {
-    //pass
+  update (time, delta) {
+    if (time > 6000) {
+      this.scene.switch("menuScene")
+    }
   }
 }
 
