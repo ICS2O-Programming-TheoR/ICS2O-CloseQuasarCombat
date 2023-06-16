@@ -23,11 +23,14 @@ const gameScene = new GameScene()
 //* Game Scene */
 const config = {
   type: Phaser.AUTO,
+  //This is the size of the game
   width: 1920,
   height: 1080,
   physics: {
+    //This is the type of the game
     default: 'arcade',
     arcade: {
+      //Allows the game to debug
       debug: false
     }
   },

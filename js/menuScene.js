@@ -14,33 +14,42 @@ class MenuScene extends Phaser.Scene {
 
     this.menuSceneBackgroundImage = null
     this.startButton = null
+    this.instructionbutton = null
   }
 
+  //This is the color for the background
   init (data) {
     this.cameras.main.setBackgroundColor("#21618C")
   }
 
   preload () {
+    //Message the console indicating that the menuscene is being loaded
     console.log("Menu Scene")
-    this.load.image("menuSceneBackground", "assets/aliens_screen_image2.jpg")
-    this.load.image("startButton", "assets/start.png")
+    //Load the images for the background and the button
+    this.load.image("menuSceneBackground", "assets/Black-hole-quasar-merger.jpg")
+    this.load.image("startButton", "assets/start-button.png")
   }
 
   create (data) {
+    //This is the code that places the background image in the center
     this.menuSceneBackgroundImage = this.add.sprite(0, 0, 'menuSceneBackground')
     this.menuSceneBackgroundImage.x = 1920 / 2
     this.menuSceneBackgroundImage.y = 1080 / 2
 
-    this.startButton = this.add.sprite(1920 / 2, (1080 / 2) + 100, 'startButton')
+    //This is the code that places the button image in the center
+    this.startButton = this.add.sprite(1920 / 2, (1080 / 2), 'startButton')
+    //This is the code that makes the button interactive
     this.startButton.setInteractive({ useHandCursor: true })
-    this.startButton.on('pointerdown', () => this.clickButton())
+    this.startButton.on('pointerdown', () => this.clickButton("game"))
   }
 
   update (time, delta) {
   }
 
-  clickButton () {
-    this.scene.start('gameScene')
+  //This is the code to transition from the menuScene to the gameScene
+  clickButton (value) {
+    //It is coded to transition after interacting with the button
+      this.scene.start('gameScene')
   }
 }
 

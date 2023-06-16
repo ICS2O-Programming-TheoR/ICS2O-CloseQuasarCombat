@@ -14,35 +14,38 @@ class TitleScene extends Phaser.Scene {
 
     this.titleSceneBackgroundImage = null
     this.titleSceneText = null
-    this.titleSceneTextStyle = {
-      font: "175px Times",
-      fill: "#fde4b9",
-      align: "center",
-    }
+    this.titleSceneTextStyle = { font: "140px Trebuchet", fill: "#f8bc04", align: "center" }
   }
 
+  //This is the color of the background
   init (data) {
     this.cameras.main.setBackgroundColor("#21618C")
   }
 
   preload () {
+    //Message the console indicating that the titlescene is being loaded
     console.log("Title Scene")
-    this.load.image("titleSceneBackground", "assets/aliens_screen_image.jpg")
+    //Load the background image used for the titlescene
+    this.load.image("titleSceneBackground", "assets/quasar.jpg")
   }
 
   create (data) {
+    //This is the code that places the background image in the center
     this.titleSceneBackgroundImage = this.add
       .sprite(0, 0, "titleSceneBackground")
       .setScale(2.75)
     this.titleSceneBackgroundImage.x = 1920 / 2
     this.titleSceneBackgroundImage.y = 1080 / 2
 
+    //This is the code that places the titlescene text at the bottom of the screen
     this.titleSceneText = this.add
     .text(1920 / 2, (1080 / 2) + 350, "Close Quasar Combat", this.titleSceneTextStyle)
     .setOrigin(0.5)
   }
 
+  //This is the code to transition from the titleScene to the menuScene
   update (time, delta) {
+    //It is coded to transition after 6 seconds
     if (time > 6000) {
       this.scene.switch("menuScene")
     }
