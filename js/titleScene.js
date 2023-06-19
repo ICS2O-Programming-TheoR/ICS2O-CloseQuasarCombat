@@ -45,8 +45,8 @@ class TitleScene extends Phaser.Scene {
 
   //This is the code to transition from the titleScene to the menuScene
   update (time, delta) {
-    //It is coded to transition after 6 seconds
-    if (time > 6000) {
+    //It is coded to transition after 4.5 seconds
+    if (time > 4500) {
       this.scene.switch("menuScene")
     }
   }
